@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Module install/update functionality.
+ */
+
+use Drupal\search_api\Entity\Index;
+
+/**
+ * Implements hook_install().
+ */
+function opigno_search_install() {
+  // Rebuild Index search after install module.
+  $index = Index::load('default_index');
+  $index->disable();
+  $index->save();
+  $index->enable();
+  $index->save();
+
+  // Uninstall core module 'Search'.
+  if (\Drupal::moduleHandler()->moduleExists('search')) {
+    \Drupal::service('module_installer')->uninstall(['search']);
+  }
+}
+

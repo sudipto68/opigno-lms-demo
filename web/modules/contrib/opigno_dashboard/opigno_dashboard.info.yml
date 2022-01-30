@@ -1,0 +1,13 @@
+name: Opigno Dashboard
+type: module
+description: Opigno dashboard.
+core_version_requirement: ^9
+package: Opigno
+configure: opigno_dashboard.dashboard_admin_settings_form
+dependencies:
+  - opigno_statistics:opigno_statistics
+
+# Information added by Drupal.org packaging script on 2021-10-08
+version: '3.0.0'
+project: 'opigno_dashboard'
+datestamp: 1633703727

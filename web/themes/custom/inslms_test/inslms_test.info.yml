@@ -1,0 +1,32 @@
+name: INS LMS TEST Theme
+type: theme
+core_version_requirement: ^8 || ^9
+description: PNINS LMS  TEST Theme
+base theme: aristotle
+
+# regions:
+#   help: 'Help'
+#   branding: 'Branding'
+#   menu: 'Menu'
+#   admin_opigno: 'Admin opigno menu'
+#   status_messages: 'Status messages'
+#   top: 'Top'
+#   sidebar_first: 'Sidebar first'
+#   content: 'Content'
+#   footer: 'Footer'
+regions:
+  header_top: Header Top
+  header_middle: Header Middle
+  header_bottom: Header Bottom
+  hero: Hero Section
+  learning_topic: Learning Topic Section
+  about_us: About Us Section
+  content: Content
+  sidebar_right: Sidebar Right
+  footer_left: Footer Left
+  footer_middle: Footer Middle
+  footer_right: Footer Right
+  addendum: Addendum
+
+libraries:
+  - inslms_test/global-styling

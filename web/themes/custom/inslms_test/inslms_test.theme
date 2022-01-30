@@ -1,0 +1,44 @@
+<?php
+use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Block\BlockManagerInterface;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\GeneratedUrl;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Element\PasswordConfirm;
+use Drupal\Core\StreamWrapper\StreamWrapperManager;
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\file\FileInterface;
+use Drupal\group\Entity\GroupInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\opigno_dashboard\Plugin\Block\AboutOpignoBlock;
+use Drupal\opigno_dashboard\Plugin\Block\SiteHeaderBlock;
+use Drupal\opigno_statistics\Services\UserStatisticsManager;
+use Drupal\search\Form\SearchBlockForm;
+use Drupal\user\Form\UserLoginForm;
+use Drupal\user\Form\UserPasswordForm;
+use Drupal\user\UserInterface;
+use Drupal\views\ViewExecutable;
+
+
+/**
+ * @file
+ * The main site theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function inslms_preprocess_page(&$variables) {
+  $style = ImageStyle::load('wide');
+
+  $variables['content_hero_image'] = '/' . drupal_get_path('theme', 'inslms_test').'/assets/public-hero.png';
+  $variables['learning_topic_image'] = '/' . drupal_get_path('theme', 'inslms_test').'/assets/learning-topic-block-mockup.png';
+  $variables['our_story_image'] = '/' . drupal_get_path('theme', 'inslms_test').'/assets/our-story-mockup.jpg';
+  
+  $variables['logo'] = '/' . drupal_get_path('theme', 'inslms_test').'/logo.svg';
+
+  $variables['logged_in'] = \Drupal::currentUser()->isAuthenticated();
+}

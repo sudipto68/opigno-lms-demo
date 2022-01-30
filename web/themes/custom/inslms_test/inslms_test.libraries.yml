@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      dist/css/custom.css: {}
+  js:
+    dist/js/custom.js: {}
+  dependencies:
+     - core/drupal
+     - core/jquery
