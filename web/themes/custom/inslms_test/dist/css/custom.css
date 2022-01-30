@@ -175,7 +175,8 @@ h4 {
 .learning_topic_section .view-learning-topics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  row-gap: 30px;
+  column-gap: 20px;
 }
 
 .learning_topic_section .views-row {
@@ -190,6 +191,12 @@ h4 {
 .learning_topic_section .views-field-title span {
   font-size: 18px;
   font-weight: 600;
+}
+
+.learning_topic_section img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* about us section design */
